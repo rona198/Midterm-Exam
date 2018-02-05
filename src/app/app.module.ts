@@ -18,6 +18,7 @@ import { ItemModule } from './items/shared/item.module';
 import { UploadModule } from './uploads/shared/upload.module';
 import { UiModule } from './ui/shared/ui.module';
 import { NotesModule } from './notes/notes.module';
+import { UsersModule } from './users/users.module';
 ///// End FireStarter
 
 import { environment } from '../environments/environment';
@@ -25,14 +26,10 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 export const firebaseConfig = environment.firebaseConfig;
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { UserLoginComponent } from './users/user-login/user-login.component';
-import { UserProfileComponent } from './users/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserLoginComponent,
-    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +40,7 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
     ItemModule,
     UiModule,
     NotesModule,
+    UsersModule,
     AngularFireModule.initializeApp(firebaseConfig),
   ],
   bootstrap: [
